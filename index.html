@@ -4,11 +4,9 @@
 
     <script src="lib/jquery-1.8.2.min.js"></script>
     <script src="js/storage/memory-store.js"></script>
-
+    <!--NOTE phonegap.js is compiled on phonegap build level-->
     <script src="phonegap.js"></script>
-
     <!--NOTE handlebars needs to be included before you can define handlebar templates-->
-
     <script src="lib/handlebars.js"></script>
 
     <script id="home-tpl" type="text/x-handlebars-template">
@@ -26,6 +24,8 @@
         {{/.}}
     </script>
     <!--NOTE main.js uses the handlebar templates and needs to be declared after the templates-->
+
+    <script src="js/homeview.js"></script>
     <script src="js/main.js"></script>
 
 </body>
