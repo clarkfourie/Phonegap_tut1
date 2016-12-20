@@ -2,24 +2,31 @@
 
 <body>
 
-    <!--NOTE: The body will be constructed by the renderHomeView function called in the initialize function-->
-
-   <script id="home-tpl" type="text/x-handlebars-template">
-       <div class="header">
-           <h1>Home</h1>
-       </div>
-       <div class="search-bar">
-           <input className="search-key" type="text"/>
-       </div>
-       <ul class="employee-list"></ul>
-   </script>
-
     <script src="lib/jquery-1.8.2.min.js"></script>
     <script src="js/storage/memory-store.js"></script>
-    <script src="js/main.js"></script>
 
     <script src="phonegap.js"></script>
+
+    <!--NOTE handlebars needs to be included before you can define handlebar templates-->
+
     <script src="lib/handlebars.js"></script>
+
+    <script id="home-tpl" type="text/x-handlebars-template">
+        <div class='header'>
+            <h1>Home</h1></div>
+        <div class='search-bar'>
+            <input class='search-key' type="text" />
+        </div>
+        <ul class='employee-list'></ul>
+    </script>
+
+    <script id="employee-li-tpl" type="text/x-handlebars-template">
+        {{#.}}
+        <li><a href="#employees/{{this.id}}">{{this.firstName}} {{this.lastName}}<br/>{{this.title}}</a></li>
+        {{/.}}
+    </script>
+    <!--NOTE main.js uses the handlebar templates and needs to be declared after the templates-->
+    <script src="js/main.js"></script>
 
 </body>
 
